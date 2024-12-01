@@ -1,33 +1,20 @@
 # Spotify Music Generator 🎵
-
 Generate personalized Spotify playlists based on user moods and activities using sentiment analysis and Spotify's API.
 
-
-
 ## Features
-
 - **Mood Detection**: Uses AI-powered sentiment analysis to determine the user's mood from a text prompt.
 - **Custom Playlists**: Maps moods to music features (valence, energy, tempo, danceability) to fetch tracks tailored to specific moods or activities.
 - **Spotify Integration**: Automatically creates and populates Spotify playlists.
-- **Filter by Genre and Artist**: Supports fine-tuning results with additional filters.
-
-
+- (**Filter by Genre and Artist**: Supports fine-tuning results with additional filters.)
 
 ## Getting Started
-
 Follow these instructions to set up and run the project locally.
 
-
-
 ### Prerequisites
-
 - Python 3.7 or higher.
 - Spotify Developer Account. Sign up at [Spotify Developer Dashboard](https://developer.spotify.com/dashboard/).
 
-
-
 ### Spotify API Setup
-
 Follow these steps to configure your Spotify API credentials:
 
 1. Go to the [Spotify Developer Dashboard](https://developer.spotify.com/dashboard/).
