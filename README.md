@@ -2,6 +2,7 @@
 
 Generate personalized Spotify playlists based on user moods and activities using sentiment analysis and Spotify's API.
 
+
 ---
 
 ## Features
@@ -11,11 +12,13 @@ Generate personalized Spotify playlists based on user moods and activities using
 - **Spotify Integration**: Automatically creates and populates Spotify playlists.
 - **Filter by Genre and Artist**: Supports fine-tuning results with additional filters.
 
+
 ---
 
 ## Getting Started
 
 Follow these instructions to set up and run the project locally.
+
 
 ---
 
@@ -23,6 +26,7 @@ Follow these instructions to set up and run the project locally.
 
 - Python 3.7 or higher.
 - Spotify Developer Account. Sign up at [Spotify Developer Dashboard](https://developer.spotify.com/dashboard/).
+
 
 ---
 
