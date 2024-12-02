@@ -33,4 +33,4 @@ SPOTIPY_REDIRECT_URI = http://localhost:8888/callback
 
 Replace your_client_id and your_client_secret with the values from your Spotify Developer Dashboard.
 
-7. The application will use these credentials to authenticate with Spotify's API.
+6. The application will use these credentials to authenticate with Spotify's API.
