@@ -19,16 +19,16 @@ Follow these steps to configure your Spotify API credentials:
 
 1. Go to the [Spotify Developer Dashboard](https://developer.spotify.com/dashboard/).
 2. Log in with your Spotify account and create a new app.
-3. Add the following redirect URI to your app settings:
+3. Add the following redirect URI to your app settings (free port):
 ```bash
-http://localhost:8888/callback
+http://localhost/*
 ```
 
 5. Copy your `Client ID` and `Client Secret` from the app dashboard.
 ```plaintext
 SPOTIPY_CLIENT_ID = your_client_id
 SPOTIPY_CLIENT_SECRET = your_client_secret
-SPOTIPY_REDIRECT_URI = http://localhost:8888/callback
+SPOTIPY_REDIRECT_URI = http://localhost/*
 ```
 
 Replace your_client_id and your_client_secret with the values from your Spotify Developer Dashboard.
