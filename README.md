@@ -25,7 +25,6 @@ http://localhost:8888/callback
 ```
 
 5. Copy your `Client ID` and `Client Secret` from the app dashboard.
-6. Create a `.env` file in the root directory of the project and add the following:
 ```plaintext
 SPOTIPY_CLIENT_ID = your_client_id
 SPOTIPY_CLIENT_SECRET = your_client_secret
@@ -34,4 +33,4 @@ SPOTIPY_REDIRECT_URI = http://localhost:8888/callback
 
 Replace your_client_id and your_client_secret with the values from your Spotify Developer Dashboard.
 
-7. Save the .env file. The application will use these credentials to authenticate with Spotify's API.
+7. The application will use these credentials to authenticate with Spotify's API.
