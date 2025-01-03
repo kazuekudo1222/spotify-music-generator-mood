@@ -4,19 +4,6 @@ const moodSection = document.getElementById('mood-section');
 const generateBtn = document.getElementById('generate-btn');
 moodSection.classList.add('hidden');
 
-// Check if user is already authenticated
-const urlParams = new URLSearchParams(window.location.search);
-const accessToken = urlParams.get('access_token');
-
-// Show/hide elements based on authentication status
-if (accessToken) {
-  localStorage.setItem('accessToken', accessToken);
-  loginBtn.classList.add('hidden'); // Hide the login button after successful login
-  moodSection.classList.remove('hidden'); // Show the mood section
-} else {
-  loginBtn.classList.remove('hidden'); // Show the login button
-}
-
 // Function to change button color
 function changeColor(button) {
   button.style.backgroundColor = 'lightblue';
