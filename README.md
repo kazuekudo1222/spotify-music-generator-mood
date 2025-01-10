@@ -3,7 +3,7 @@ Generate personalized YouTube Music tracks based on user moods and activities us
 
 ## Features
 - **Mood Detection**: Uses AI-powered sentiment analysis to determine the user's mood from a text prompt.
-- **Custom Playlists**: Maps moods to music features (valence, energy, tempo, danceability) to fetch tracks tailored to specific moods or activities.
+- **Custom** Track Selection: Maps moods to track attributes (e.g., mood keywords) to fetch songs tailored to specific moods or activities.
 - **Youtube Integration**: Fetches songs and provides direct URLs for playback in YouTube Music.
 
 ## Getting Started
