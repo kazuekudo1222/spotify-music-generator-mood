@@ -13,7 +13,7 @@ Follow these instructions to set up and run the project locally.
 - Python 3.7 or higher.
 - Install the ytmusicapi library.
 
-### Usage
+## Usage
 - Run the application and input a mood or activity (e.g., "happy", "workout").
 - The app will use sentiment analysis to generate a mood-based query.
 - Fetch songs tailored to the mood using YouTube Music's search functionality.
