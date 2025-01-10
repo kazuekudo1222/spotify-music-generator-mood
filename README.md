@@ -9,7 +9,7 @@ Generate personalized YouTube Music tracks based on user moods and activities us
 ## Getting Started
 Follow these instructions to set up and run the project locally.
 
-### Prerequisites
+## Prerequisites
 - Python 3.7 or higher.
 - Install the ytmusicapi library.
 
