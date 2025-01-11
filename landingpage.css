@@ -9,7 +9,7 @@ body {
   justify-content: flex-start;
   flex-grow: 2;
   align-items: center;
-  height: 100vh;
+  height: 120vh;
 }
 header{
   display: flex;
