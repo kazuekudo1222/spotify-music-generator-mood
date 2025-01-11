@@ -1,5 +1,5 @@
 # Youtube Music Generator 🎵
-Generate personalized YouTube Music tracks based on user moods and activities using sentiment analysis and the ytmusicapi.
+Generate personalized YouTube Music tracks based on user moods using sentiment analysis and the ytmusicapi.
 
 ## Features
 - **Mood Detection**: Uses AI-powered sentiment analysis to determine the user's mood from a text prompt.
