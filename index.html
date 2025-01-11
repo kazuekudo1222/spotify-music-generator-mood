@@ -16,12 +16,11 @@
 
   <main>
     <!-- Spotify Login Button -->
-    <button id="spotify-login" class="btn"><img src="images/android_light_rd_SI@1x.png" alt="google">
-    </button>
+    <button id="spotify-login" class="btn">Sign in with Google</button>
 
     <!-- Mood Input Section -->
     <div id="mood-section" class="">
-      <input type="text" id="mood" placeholder="How are you feeling right now?">
+      <input type="text" id="text" placeholder="How are you feeling right now?"/>
       <button id="generate-btn" class="btn">Generate Playlist</button>
 
     </div>
@@ -30,8 +29,8 @@
   <footer>
     <p>Powered by Google</p>
   </footer>
-
-  <script src="mock.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+  <script src="mock-spotify.js"></script>
 </body>
 
 </html>
