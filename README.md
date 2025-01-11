@@ -14,7 +14,7 @@ Follow these instructions to set up and run the project locally.
 - Install the ytmusicapi library.
 
 ## Usage
-- Run the application and input a mood or activity (e.g., "happy", "workout").
+- Run the application and input a mood (e.g., "happy", "I am tired").
 - The app will use sentiment analysis to generate a mood-based query.
 - Fetch songs tailored to the mood using YouTube Music's search functionality.
 - Enjoy the music via the provided YouTube Music links.
