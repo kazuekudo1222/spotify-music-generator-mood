@@ -44,7 +44,7 @@ loginBtn.addEventListener('click', (event) => {
 
   // Simulate login with fetch to mock API// Handle the response from the backend after authentication
 
-  fetch('https://run.mocky.io/v3/16b019a8-4809-42f2-ae39-f38fefe358fd')
+  fetch('http://127.0.0.1:3000/spotify/authenticate')
     //'http://your-backend-url.com/spotify/callback'
 
     .then((response) => response.json())
@@ -91,10 +91,10 @@ loginBtn.addEventListener('click', (event) => {
     });
 });
 
-//Handle mood input and generate playlist
+//Handle mood input and generate playlist. I change your ID from mood to text
 generateBtn.addEventListener('click', () => {
-  const mood = document.getElementById('mood').value.trim();
-  if (!mood || mood.length < 3) {
+  const text = document.getElementById('text').value.trim();
+  if (!text || text.length < 3) {
     alert('Please enter a valid mood (at least 3 characters).');
     return;
   }
@@ -102,13 +102,13 @@ generateBtn.addEventListener('click', () => {
   // Show loading state
   showLoadingState();
 
-  // Send mood and access token to the backend
-  fetch('https://run.mocky.io/v3/1fe67190-1bae-484b-a545-0695441b75fa', {
+  // Send mood and access token to the backend. Also updated the input from mood to text and remove the access token
+  fetch('http://127.0.0.1:3000/suggest-music', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ mood, access_token: accessToken }),
+    body: JSON.stringify({ text }),
   })
     .then((response) => response.json())
     .then((data) => {
