@@ -154,7 +154,7 @@ function displaySongs(songs) {
 
   //clear button
   const clr = document.createElement('button');
-  clr.textContent = 'clear search';
+  clr.textContent = 'Clear Search';
   songListContainer.appendChild(clr);
   clr.addEventListener('click', () => {
     songListContainer.remove();
