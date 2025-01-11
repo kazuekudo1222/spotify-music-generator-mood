@@ -145,7 +145,7 @@ function displaySongs(songs) {
   songs.forEach((song) => {
     const li = document.createElement('li');
     li.classList.add('song-item');
-    li.innerHTML = `<a href="${song.url}" target="_blank">${song.name}</a> by ${song.artist}
+    li.innerHTML = `<a href="${song.url}" target="_blank">${song.title}</a> by ${song.artist}
 `;
     ul.appendChild(li);
   });
