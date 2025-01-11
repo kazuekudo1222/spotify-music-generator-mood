@@ -158,7 +158,7 @@ function displaySongs(songs) {
   songListContainer.appendChild(clr);
   clr.addEventListener('click', () => {
     songListContainer.remove();
-    mood.value = '';
+    text.value = '';
     clr.remove();
     generateBtn.classList.remove('hidden');
   });
