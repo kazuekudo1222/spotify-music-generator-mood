@@ -1,15 +1,47 @@
 const express = require('express');
 const axios = require('axios');
 const cors = require('cors') // Middleware for handling CORS
+const jwt = require('jsonwebtoken'); // For decoding Google tokens
 
 const app = express();
 const PORT = 3000;
 
-// Middleware to parse JSON requests
-app.use(express.json());
+app.use(express.json()); // Middleware to parse JSON requests
+app.use(cors());  // Enable CORS for all routes
 
-// Enable CORS for all routes
-app.use(cors());
+// Route for verifying Google ID Token
+app.post('/google-login', async (req, res) => {
+  const { idToken } = req.body;
+  // Log the received token to verify it's coming through
+  console.log('Google token received:', idToken);
+
+  if (!idToken) {
+    return res.status(400).json({ error: 'No ID token provided' });
+  }
+
+  try {
+    // Verify the ID token with Google
+    const response = await axios.get(
+      `https://oauth2.googleapis.com/tokeninfo?id_token=${idToken}`
+    );
+
+    const { email, name, picture } = response.data;
+
+    // Respond with user profile info
+    return res.json({
+      success: true,
+      user: {
+        email,
+        name,
+        picture,
+      },
+    });
+  } catch (error) {
+    console.error('Error verifying Google ID Token:', error.message);
+    return res.status(401).json({ error: 'Invalid ID token' });
+  }
+});
+
 
 // Route for authentication
 app.get('/spotify/authenticate', (req, res) => {
