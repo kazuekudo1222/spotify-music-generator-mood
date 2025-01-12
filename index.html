@@ -5,7 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Moodify</title>
-  <link rel="stylesheet" href="./landingpage.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+
 </head>
 
 <body>
@@ -15,25 +17,25 @@
   </header>
 
   <main>
-    <!-- Spotify Login Button -->
-    <button id="spotify-login" class="btn"><img src="android_light_rd_si_1x.png" alt="google">
+    <!-- Google Login Button -->
+    <button id="google-login" class="btn"><img src="android_light_rd_si_1x.png" alt="google">
     </button>
 
     <!-- Mood Input Section -->
     <div id="mood-section" class="">
-      <input type="text" id="mood" placeholder="How are you feeling right now?">
+      <input type="text" id="text" placeholder="How are you feeling right now?"/>
       <button id="generate-btn" class="btn">Generate Playlist</button>
+
     </div>
   </main>
 
   <footer>
     <p>Powered by Google</p>
   </footer>
+  <!-- Google API Script -->
+  <script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/build/jwt-decode.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
-  <script src="mock-spotify.js"></script>
+  <script src="script.js"></script>
 </body>
 
 </html>
-<!-- avatar on the prof on corner -->
-<!-- no script -->
-<!-- comments -will it be displayed after deployed -->
