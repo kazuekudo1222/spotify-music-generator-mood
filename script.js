@@ -49,16 +49,12 @@ function resetButton() {
   generateBtn.disabled = false; // Enable the button
 }
 
-// Spotify Login
-
-  // Handle Google Sign-In Response
+// Google Login  // Handle Google Sign-In Response
 function handleCredentialResponse(response) {
   const idToken = response.credential; // Google ID Token
-// Redirect to backend to initiate Spotify login flow
-//window.location.href = 'http://your-backend-url.com/spotify/authenticate';
+// Redirect to backend to initiate Spotify login flow //window.location.href = 'http://your-backend-url.com/spotify/authenticate';
 
 // Simulate login with fetch to mock API// Handle the response from the backend after authentication
-
   fetch('https://youtube-music-mood.onrender.com//google-login', {
     method: 'POST',
     headers: {
