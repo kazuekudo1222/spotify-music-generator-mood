@@ -55,7 +55,7 @@ function handleCredentialResponse(response) {
 // Redirect to backend to initiate Spotify login flow //window.location.href = 'http://your-backend-url.com/spotify/authenticate';
 
 // Simulate login with fetch to mock API// Handle the response from the backend after authentication
-  fetch('https://youtube-music-mood.onrender.com//google-login', {
+  fetch('https://youtube-music-mood.onrender.com/google-login', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
