@@ -55,7 +55,7 @@ function handleCredentialResponse(response) {
 // Redirect to backend to initiate Spotify login flow //window.location.href = 'http://your-backend-url.com/spotify/authenticate';
 
 // Simulate login with fetch to mock API// Handle the response from the backend after authentication
-  fetch('https://youtube-music-mood.onrender.com/google-login', {
+  fetch('https://youtube-music-generator-node.onrender.com/google-login', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -130,8 +130,8 @@ generateBtn.addEventListener('click', () => {
   // Show loading state
   showLoadingState();
 
-  // Send mood and access token to the backend. Also updated the input from mood to text and remove the access token
-  fetch('https://youtube-music-mood.onrender.com/suggest-music', {
+  // Send mood text and access token to the backend. Also updated the input from mood to text and remove the access token
+  fetch('https://youtube-music-generator-node.onrender.com/suggest-music', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
