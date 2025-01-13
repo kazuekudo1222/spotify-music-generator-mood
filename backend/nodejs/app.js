@@ -4,7 +4,7 @@ const cors = require('cors') // Middleware for handling CORS
 const jwt = require('jsonwebtoken'); // For decoding Google tokens
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.use(express.json()); // Middleware to parse JSON requests
 app.use(cors());  // Enable CORS for all routes
@@ -90,5 +90,5 @@ app.post('/suggest-music', async (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Node.js server running on http://127.0.0.1:${PORT}`);
+  console.log(`Node.js server running on ${PORT}`);
 });
