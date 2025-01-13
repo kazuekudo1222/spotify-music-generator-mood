@@ -59,7 +59,7 @@ function handleCredentialResponse(response) {
 
 // Simulate login with fetch to mock API// Handle the response from the backend after authentication
 
-  fetch('http://127.0.0.1:3000/google-login', {
+  fetch('https://youtube-music-mood.onrender.com//google-login', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -135,7 +135,7 @@ generateBtn.addEventListener('click', () => {
   showLoadingState();
 
   // Send mood and access token to the backend. Also updated the input from mood to text and remove the access token
-  fetch('http://127.0.0.1:3000/suggest-music', {
+  fetch('https://youtube-music-mood.onrender.com/suggest-music', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
