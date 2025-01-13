@@ -1,5 +1,5 @@
 body {
-  margin: 0;
+  margin: 15px;
   font-family: Arial, sans-serif;
   background: linear-gradient(135deg, #2b1055, #7597de);
   color: white;
@@ -74,7 +74,6 @@ footer {
   margin-top: 20px;
   flex-direction: column;
   margin-left: auto;
-  margin-right: 10px;
 }
 .change-bgColor{
   background: linear-gradient(135deg, #be57be, #7597de);
