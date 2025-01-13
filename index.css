@@ -74,6 +74,7 @@ footer {
   margin-top: 20px;
   flex-direction: column;
   margin-left: auto;
+  margin-right: 10px;
 }
 .change-bgColor{
   background: linear-gradient(135deg, #be57be, #7597de);
