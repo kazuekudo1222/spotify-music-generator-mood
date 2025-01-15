@@ -6,7 +6,11 @@ from ytmusicapi import YTMusic
 app = Flask(__name__)
 
 # Initialize models
-zero_shot_classifier = pipeline("zero-shot-classification")
+zero_shot_classifier = pipeline(
+    "zero-shot-classification", 
+    model="valhalla/distilbart-mnli-12-1", ## change from model="facebook/bart-large-mnli"). switched to small model required less memory.
+    cache_dir="./cache" ## to store model weights on disk instead of keeping them fully in memory
+)
 ytmusic = YTMusic()  # No headers.json required
 
 # Define candidate labels for sentiment analysis
