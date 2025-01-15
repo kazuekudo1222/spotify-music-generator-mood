@@ -77,12 +77,12 @@ function handleCredentialResponse(response) {
         userProfileContainer.classList.add('user-profile');
 
         const profileImage = document.createElement('img');
-        profileImage.src = data.profilePic; // Assuming the API returns `profilePic`
-        profileImage.alt = `${data.username}'s profile picture`;
+        profileImage.src = picture; // Assuming the API returns `profilePic`
+        profileImage.alt = `${name}'s profile picture`;
         profileImage.classList.add('profile-pic'); // Optional styling class
 
         const profileName = document.createElement('h3');
-        profileName.textContent = data.username; // Assuming the API returns `username`
+        profileName.textContent = name; // Assuming the API returns `username`
         profileName.classList.add('profile-name'); // Optional styling class
 
         userProfileContainer.appendChild(profileImage);
