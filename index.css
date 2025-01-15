@@ -76,6 +76,11 @@ footer {
   margin-left: auto;
   margin-right: 20px;
 }
+.logout{
+  margin-top: 0;
+  font-size: 0.85em ;
+  color: #2b1055;
+}
 .change-bgColor{
   background: linear-gradient(135deg, #be57be, #7597de);
 }
