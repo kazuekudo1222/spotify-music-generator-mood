@@ -97,6 +97,17 @@ function handleCredentialResponse(response) {
         // Show mood section and hide login button
         moodSection.classList.remove('hidden');
         loginBtn.classList.add('hidden');
+        
+        //show logout button
+        const logOut = document.createElement('button');
+        logOut.textContent = 'Log out';
+        logOut.classList.add('logout');
+        userProfileContainer.appendChild(logOut);
+        
+        logOut.addEventListener('click', () => {
+          signOut();
+        });
+        
       }   else {
         alert(
           'Authentication failed. Please check your credentials and try again.',
