@@ -62,19 +62,26 @@ footer {
   height: 50px;
   border-radius: 50%;
 }
+.profile-pic:hover{
+  border:#2b1055 solid; 
+}
 .profile-name {
   font-size: 1em;
   margin-top: 5px;
   text-align: center;
+  color: #2b1055;
+}
+.profile-name:hover{
+  color:#3c373d;
 }
 .user-profile {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 5px;
   margin-top: 20px;
-  flex-direction: column;
+  margin-right: 10px;
+  flex-direction: row;
   margin-left: auto;
-  margin-right: 20px;
 }
 .logout{
   margin-top: 0;
