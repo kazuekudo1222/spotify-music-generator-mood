@@ -67,7 +67,7 @@ function handleCredentialResponse(response) {
     .then((data) => {
       if (data.success) {
         console.log('Backend response:', data); // Log the backend response
-        alert('Login successful!');
+        //alert('Login successful!');
         moodSection.classList.remove('hidden'); // Show mood section
         loginBtn.classList.add('hidden'); // Hide login button
         const { email, name, picture } = data.user; // Display user profile info
@@ -126,7 +126,9 @@ function signOut() {
   auth2.signOut().then(() => {
     console.log('User signed out.');
     // Remove user profile and show the login button again
-    document.querySelector('.user-profile').remove(); // Remove user profile
+    //document.querySelector('.user-profile').remove(); // Remove user profile
+    alert('you are logging out');
+    window.location.href ='https://youtube-music-mood.onrender.com/';
   });
 }
 
