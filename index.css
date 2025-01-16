@@ -100,7 +100,7 @@ footer {
   box-sizing: border-box;
   position: absolute;
   animation: pulse 1s linear infinite;
-  top: 45%;
+  top: 50%;
 }
 .loader:after {
   content: '';
