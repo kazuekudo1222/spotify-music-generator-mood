@@ -1,5 +1,5 @@
 // DOM Elements
-const loginBtn = document.getElementById('spotify-login');
+const loginBtn = document.getElementById('google-login');
 const moodSection = document.getElementById('mood-section');
 const generateBtn = document.getElementById('generate-btn');
 moodSection.classList.add('hidden');
@@ -7,6 +7,19 @@ moodSection.classList.add('hidden');
 // Check if user is already authenticated
 const urlParams = new URLSearchParams(window.location.search);
 const accessToken = urlParams.get('access_token');
+
+// Initialize Google Sign-In
+window.onload = function () {
+  google.accounts.id.initialize({
+    client_id: '340009438838-0mg7mqi32k3dobmbekgtuokrqpmvo7dh.apps.googleusercontent.com', // Replace with your actual Client ID
+    callback: handleCredentialResponse,
+  });
+
+  google.accounts.id.renderButton(
+    document.getElementById('google-login'),
+    { theme: 'outline', size: 'large' }
+  );
+};
 
 // Show/hide elements based on authentication status
 if (accessToken) {
@@ -36,35 +49,40 @@ function resetButton() {
   generateBtn.disabled = false; // Enable the button
 }
 
-// Spotify Login
-loginBtn.addEventListener('click', (event) => {
-  changeColor(event.target);
-  // Redirect to backend to initiate Spotify login flow
-  //window.location.href = 'http://your-backend-url.com/spotify/authenticate';
+// Google Login  // Handle Google Sign-In Response
+function handleCredentialResponse(response) {
+  const idToken = response.credential; // Google ID Token
+// Redirect to backend to initiate Spotify login flow //window.location.href = 'http://your-backend-url.com/spotify/authenticate';
 
-  // Simulate login with fetch to mock API// Handle the response from the backend after authentication
-
-  fetch('http://127.0.0.1:3000/spotify/authenticate')
-    //'http://your-backend-url.com/spotify/callback'
+// Simulate login with fetch to mock API// Handle the response from the backend after authentication
+  fetch('https://youtube-music-generator-node.onrender.com/google-login', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ idToken }),
+  })
 
     .then((response) => response.json())
     .then((data) => {
       if (data.success) {
-        alert('Login successful!');
+        console.log('Backend response:', data); // Log the backend response
+        //alert('Login successful!');
         moodSection.classList.remove('hidden'); // Show mood section
         loginBtn.classList.add('hidden'); // Hide login button
+        const { email, name, picture } = data.user; // Display user profile info
 
         // Display user profile
         const userProfileContainer = document.createElement('div');
         userProfileContainer.classList.add('user-profile');
 
         const profileImage = document.createElement('img');
-        profileImage.src = data.profilePic; // Assuming the API returns `profilePic`
-        profileImage.alt = `${data.username}'s profile picture`;
+        profileImage.src = picture; // Assuming the API returns `profilePic`
+        profileImage.alt = `${name}'s profile picture`;
         profileImage.classList.add('profile-pic'); // Optional styling class
 
         const profileName = document.createElement('h3');
-        profileName.textContent = data.username; // Assuming the API returns `username`
+        profileName.textContent = name; // Assuming the API returns `username`
         profileName.classList.add('profile-name'); // Optional styling class
 
         userProfileContainer.appendChild(profileImage);
@@ -79,7 +97,18 @@ loginBtn.addEventListener('click', (event) => {
         // Show mood section and hide login button
         moodSection.classList.remove('hidden');
         loginBtn.classList.add('hidden');
-      } else {
+        
+        //show logout button
+        const logOut = document.createElement('button');
+        logOut.textContent = 'Log out';
+        logOut.classList.add('logout');
+        userProfileContainer.appendChild(logOut);
+        
+        logOut.addEventListener('click', () => {
+          signOut();
+        });
+        
+      }   else {
         alert(
           'Authentication failed. Please check your credentials and try again.',
         );
@@ -89,7 +118,19 @@ loginBtn.addEventListener('click', (event) => {
       console.error('Error:', error);
       alert('An error occurred. Please try again later.');
     });
-});
+};
+
+// Google Logout Function
+function signOut() {
+  const auth2 = gapi.auth2.getAuthInstance();
+  auth2.signOut().then(() => {
+    console.log('User signed out.');
+    // Remove user profile and show the login button again
+    //document.querySelector('.user-profile').remove(); // Remove user profile
+    alert('you are logging out');
+    window.location.href ='https://youtube-music-mood.onrender.com/';
+  });
+}
 
 //Handle mood input and generate playlist. I change your ID from mood to text
 generateBtn.addEventListener('click', () => {
@@ -102,8 +143,8 @@ generateBtn.addEventListener('click', () => {
   // Show loading state
   showLoadingState();
 
-  // Send mood and access token to the backend. Also updated the input from mood to text and remove the access token
-  fetch('http://127.0.0.1:3000/suggest-music', {
+  // Send mood text and access token to the backend. Also updated the input from mood to text and remove the access token
+  fetch('https://youtube-music-generator-node.onrender.com/suggest-music', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

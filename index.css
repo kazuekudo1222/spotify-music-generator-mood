@@ -9,11 +9,12 @@ body {
   justify-content: flex-start;
   flex-grow: 2;
   align-items: center;
-  height: 120vh;
+  min-height: 100vh;
 }
 header{
   display: flex;
   flex-direction: column;
+  padding-top: 90px;
 }
 h1 {
   margin-bottom: 10px;
@@ -62,18 +63,31 @@ footer {
   height: 50px;
   border-radius: 50%;
 }
+.profile-pic:hover{
+  border:#2b1055 solid; 
+}
 .profile-name {
   font-size: 1em;
   margin-top: 5px;
   text-align: center;
+  color: #2b1055;
+}
+.profile-name:hover{
+  color:#3c373d;
 }
 .user-profile {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 5px;
   margin-top: 20px;
-  flex-direction: column;
+  margin-right: 10px;
+  flex-direction: row;
   margin-left: auto;
+}
+.logout{
+  margin-top: 0;
+  font-size: 0.85em ;
+  color: #2b1055;
 }
 .change-bgColor{
   background: linear-gradient(135deg, #be57be, #7597de);
@@ -87,7 +101,7 @@ footer {
   box-sizing: border-box;
   position: absolute;
   animation: pulse 1s linear infinite;
-  top: 47%;
+  top: 50%;
 }
 .loader:after {
   content: '';
