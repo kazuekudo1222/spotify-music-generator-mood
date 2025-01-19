@@ -106,6 +106,17 @@ function handleCredentialResponse(response) {
         
         logOut.addEventListener('click', () => {
           signOut();
+          // Google Logout Function
+          function signOut() {
+            localStorage.removeItem('user');
+            sessionStorage.removeItem('user');     
+            console.log('User signed out.');
+              // Remove user profile and show the login button again
+              //document.querySelector('.user-profile').remove(); // Remove user profile
+              alert('you are logging out');
+              window.location.href ='https://youtube-music-mood.onrender.com';
+          };
+
         });
         
       }   else {
